@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Gallery</title>
+  <!-- เชื่อมต่อกับไฟล์ CSS ภายนอก -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="loginPage" class="login-container">
+    <div class="login-box">
+      <h1>🔒 Admin</h1>
+      <input type="password" id="passwordInput" placeholder="ใส่รหัสผ่าน" />
+      <button onclick="checkPassword()">เข้าสู่ระบบ</button>
+      <div id="errorMessage" class="error-message"></div>
+      <div id="exampleImagesContainer" class="example-images hidden"></div>
+    </div>
+  </div>
+
+  <!-- Gallery Page -->
+  <div id="galleryPage" class="gallery-container">
+    <div class="gallery-header">
+      <h1>🖼️ Gallery</h1>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="ค้นหาจากชื่อผู้ใช้..." />
+        <button onclick="searchGallery()">ค้นหา</button>
+        <button onclick="showAll()">ทั้งหมด</button>
+        <button class="logout-btn" onclick="logout()">ออกจากระบบ</button>
+      </div>
+    </div>
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img id="modalImage" src="/placeholder.svg" alt="Full size image">
+    </div>
+  </div>
+
+  <!-- เชื่อมต่อกับไฟล์ JavaScript ภายนอก -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
